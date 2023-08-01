@@ -1,11 +1,14 @@
+import Home from "./components/Home/Home"
+import NavigationBar from "./components/NavigationBar/NavigationBar"
 
 
 function App() {
 
   return (
-    <>
-      <h1>Hello</h1>
-    </>
+    <div className="h-full flex flex-col">
+      <NavigationBar />
+      <Home />
+    </div>
   )
 }
 
