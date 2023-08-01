@@ -1,0 +1,1 @@
+This project is a mock shopping cart with basic functionality. The purpose of this project is to practice and apply my knowledge of React, CSR, Tailwind, and problem solving.
