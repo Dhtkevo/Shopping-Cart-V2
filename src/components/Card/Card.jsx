@@ -1,3 +1,4 @@
+import { propTypes } from "react-bootstrap/esm/Image";
 
 function Card({ img, price, title }) {
     return (
@@ -9,6 +10,13 @@ function Card({ img, price, title }) {
             <button type="button" className="bg-green-500 mt-8 p-4 rounded-xl hover:shadow-xl hover:shadow-green-300 text-white">Add To Cart</button>
         </div>
     );
+}
+
+Card.propTypes = {
+    img: propTypes.string,
+    price: propTypes.string,
+    title: propTypes.string,
+
 }
 
 export default Card;
