@@ -8,7 +8,7 @@ const ProductPage = () => {
     const [loading, setLoading] = useState(true);
 
     const fetchUserData = () => {
-        fetch('https://fakestoreapi.com/products')
+        fetch('https://fakestoreapi.com/products/category/men\'s clothing?limit=3')
             .then(res => res.json())
             .then(json => setUsers(json))
         setLoading(false);
@@ -22,9 +22,9 @@ const ProductPage = () => {
         <>
             <Outlet />
 
-            <div className="w-full h-full bg-slate-100 px-24 pt-12 pb-8">
+            <div className="w-full h-screen bg-slate-100 px-24 pt-12 pb-8">
                 {loading ?
-                    <div className="w-full h-full flex flex-col justify-center items-center gap-8" >
+                    <div className="w-full h-screen flex flex-col justify-center items-center gap-8" >
                         <h1 className="text-8xl">Loading...</h1>
                         <SpinnerCircular color="#0000FF" size="15%" />
                     </div> :
