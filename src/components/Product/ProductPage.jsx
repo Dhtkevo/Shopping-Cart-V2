@@ -1,7 +1,7 @@
-import Card from "../Card/Card";
+import Card from "./Card";
 import { Outlet } from "react-router";
 import { useEffect, useState } from "react";
-import { SpinnerCircular } from 'spinners-react'
+import { SpinnerCircular } from 'spinners-react';
 
 const ProductPage = () => {
     const [users, setUsers] = useState(null);

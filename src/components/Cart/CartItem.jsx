@@ -26,8 +26,8 @@ function CartItem({ title, img, quantity, product }) {
 
     return (
         <div className="p-2 flex justify-between px-10 bg-white h-full rounded-xl">
-            <img src={img} alt="clothes image" className="h-full w-28" />
-            <div className="flex flex-col justify-center items-center gap-6">
+            <img src={img} alt="clothes image" className="h-full w-28 shrink" />
+            <div className="flex flex-col justify-center items-center gap-6 shrink">
                 <h2 className="font-medium text-lg min-w-fit">{title}</h2>
                 <ButtonGroup size="small" variant="text" aria-label="outlined primary button group">
                     <Button onClick={() => dispatch(reduceQuantity(product))} >-</Button>
