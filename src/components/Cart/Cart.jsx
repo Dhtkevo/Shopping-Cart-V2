@@ -1,6 +1,6 @@
 import { NavLink, Outlet } from "react-router-dom";
 import { useSelector } from "react-redux/es/hooks/useSelector";
-import CartItem from "./cartItem";
+import CartItem from "./CartItem";
 import { clearCart } from "../../redux-slices/cartProductSlice";
 import { cartQuantitySelector } from "../../redux-slices/cartProductSlice";
 import { cartTotalSelector } from "../../redux-slices/cartProductSlice";
