@@ -1,8 +1,10 @@
 import { useSelector } from "react-redux";
 import { Link, NavLink } from "react-router-dom";
+import { cartQuantitySelector } from "../../redux-slices/cartProductSlice";
 
 function NavigationBar() {
-    const count = useSelector((state) => state.cartCount.value);
+
+    const cartQuantity = useSelector(cartQuantitySelector);
 
     return (
         <>
@@ -17,7 +19,7 @@ function NavigationBar() {
                         <Link to="/about"><span className="hover:cursor-pointer  ">About</span></Link>
                         <div className="flex relative">
                             <NavLink to="/checkout"><img src="/cart-icon.jpg" alt="Shopping cart icon" className="w-16" /></NavLink>
-                            {count > 0 && <div className="bg-blue-500 absolute left-6 -top-1 rounded-2xl w-6 h-6 flex justify-center items-center">{count}</div>}
+                            {cartQuantity > 0 && <div className="bg-blue-500 absolute left-6 -top-1 rounded-2xl w-6 h-6 flex justify-center items-center">{cartQuantity}</div>}
                         </div>
                     </div>
                 </div>

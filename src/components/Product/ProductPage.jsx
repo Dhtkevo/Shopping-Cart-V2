@@ -7,6 +7,8 @@ const ProductPage = () => {
     const [users, setUsers] = useState(null);
     const [loading, setLoading] = useState(true);
 
+
+
     const fetchUserData = () => {
         fetch('https://fakestoreapi.com/products/category/men\'s clothing?limit=3')
             .then(res => res.json())
@@ -32,7 +34,7 @@ const ProductPage = () => {
                         <h1 className="font-bold text-5xl mb-4">Products</h1>
                         <section className=" h-full  grid grid-cols-3 gap-4 gap-y-0">
                             {users && users.map(prod => (
-                                <Card title={prod.title} price={prod.price} img={prod.image} key={prod.id} />
+                                <Card product={prod} key={prod.id} />
                             ))}
 
                         </section>
