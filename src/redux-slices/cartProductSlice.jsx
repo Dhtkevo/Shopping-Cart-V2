@@ -13,39 +13,29 @@ const cartProductSlice = createSlice({
             const item = state.products.find((product) => product.id === action.payload.id);
 
             if (item) {
-                item.quantity += action.payload.quantity;
+                item.quantity += 1;
             } else {
                 state.products.push(action.payload);
 
             }
-            // reducer(state, action) {
-            //     state.products.push(action.payload)
-            // },
-            // prepare(id, img, title, price, quantity) {
-            //     return {
-            //         payload: {
-            //             id,
-            //             img,
-            //             title,
-            //             price,
-            //             quantity,
-            //         }
-            //     }
-            // }
-        }
-    },
-    deleteItem: {
-        reducer(state, action) {
-            state.products = state.products.filter((prod) => {
-                prod.id !== action.payload;
-            })
         },
-        prepare(id) {
-            return {
-                payload: {
-                    id
-                }
+        reduceQuantity: (state, action) => {
+            const item = state.products.find((product) => product.id === action.payload.id);
+
+            if (item.quantity === 1) {
+                state.products.splice(
+                    state.products.findIndex((item) => item.id === action.payload.id),
+                    1
+                );
             }
+            if (item) item.quantity -= 1;
+
+        },
+        deleteItem: (state, action) => {
+            state.products.splice(
+                state.products.findIndex((item) => item.id === action.payload.id),
+                1
+            );
         }
     }
 });
@@ -59,6 +49,6 @@ export const cartTotalSelector = (state) => state.cartProducts.products.reduce(
     0
 );
 
-export const { addItem, removeItem } = cartProductSlice.actions;
+export const { addItem, deleteItem, reduceQuantity } = cartProductSlice.actions;
 export default cartProductSlice.reducer;
 

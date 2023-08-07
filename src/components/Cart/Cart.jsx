@@ -34,7 +34,7 @@ function Cart() {
                     </div>
                     <div className="h-1/2 flex flex-col gap-4">
                         {cartProds.map(prod =>
-                            <CartItem key={prod.id} img={prod.image} price={prod.price.toFixed(2)} title={prod.title} quantity={prod.quantity} />
+                            <CartItem key={prod.id} img={prod.image} price={prod.price.toFixed(2)} title={prod.title} quantity={prod.quantity} product={prod} />
                         )}
                     </div>
                 </div>
