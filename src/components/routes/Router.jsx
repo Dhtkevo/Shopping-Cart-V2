@@ -6,50 +6,42 @@ import ErrorPage from '../Error/ErrorPage.jsx'
 import { createBrowserRouter } from 'react-router-dom'
 import About from "../About/About";
 import Cart from "../Cart/Cart";
+import { Outlet } from "react-router-dom";
+
+function Layout() {
+    return (
+        <>
+            <NavigationBar />
+            <Outlet />
+        </>
+    );
+}
+
 
 
 const router = createBrowserRouter([
     {
-        path: "/",
-        element: <Home />,
+        element: <Layout />,
         errorElement: <ErrorPage />,
         children: [
             {
                 path: "/",
-                element: <NavigationBar />,
-            }
-        ]
-    },
-    {
-        path: "products",
-        element: <ProductPage />,
-        children: [
+                element: <Home />,
+            },
             {
                 path: "/products",
-                element: <NavigationBar />,
-            }
-        ]
-    },
-    {
-        path: "about",
-        element: <About />,
-        children: [
+                element: <ProductPage />,
+            },
             {
                 path: "/about",
-                element: <NavigationBar />
-            }
-        ]
-    },
-    {
-        path: "checkout",
-        element: <Cart />,
-        children: [
+                element: <About />,
+            },
             {
                 path: "/checkout",
-                element: <NavigationBar />
-            }
-        ],
-    },
+                element: <Cart />
+            },
+        ]
+    }
 ]);
 
 function Router() {
