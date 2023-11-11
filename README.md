@@ -2,6 +2,8 @@
 
 A front-end application meant to mimick a small scale ecommerce store. Built with React, Redux Toolkit, and TailwindCSS.
 
+# [Live Demo](https://shopping-cart-v2-jgpb.vercel.app/)
+
 <img width="1728" alt="Screenshot 2023-11-09 at 9 31 16 AM" src="https://github.com/Dhtkevo/Shopping-Cart-V2/assets/110263079/718ce53e-9213-4d2c-bd95-c9c9ad43ff63">
 
 
